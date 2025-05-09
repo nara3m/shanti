@@ -27,6 +27,8 @@ jobs:
         run: |
           # Configure the site name
           echo 'name: Shanti' >> hyde.yml
+          echo 'url: https://nara3m.github.io/shanti' >> hyde.yml
+          echo 'footer: false' >> hyde.yml
           # Optionally, load styles from the CDN
           echo 'load_app_styles_from_cdn: true' >> hyde.yml
           # Optionally, use Highlight.js for syntax highlighting
