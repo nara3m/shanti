@@ -4,9 +4,9 @@
 
 [**Shanti**](https://pypi.org/project/shanti/) is a Python library for creating interactive, standalone HTML dashboards from proteomics data (specifically input data in Tabular format such as Microsoft Excel). 
 
-Instructions to create HTML file (in this page, HTML file is referred with the default file name `dashboard.html`) from [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) and [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) input files with **Shanti** python library are described later in [Section Test](http://link_to_the_section).
+Instructions to create HTML file are described later in [Section Test](http://link_to_the_section).
 
-Let's begin with the main components of the `dashboard.html` file.
+Let's begin with the main components of the HTML file.
 
 1. Filter Bars 
 2. Search Tool
@@ -16,11 +16,13 @@ Let's begin with the main components of the `dashboard.html` file.
 6. Protein Table
 7. Peptide Table
 
+![Screenshot of HTML file with highlighted components](https://github.com/nara3m/shanti/raw/refs/heads/main/img/components.png)
+
 ## 1. Filter Bar
 
->info Depends on: Input files for **Shanti** python library (example, [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) and [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx)).
+>info depends on: 
 
->warning Influences: `3. Volcano Plot`
+>warning influences: #3-volcano-plot
 
 Filter bars can be adjusted to display a specific range of data points in `3. Volcano Plot`. For example, biomedical scientists frequently discard all data points with a -log 10 P value less than 1.3 (equals P value less than 0.05). 
 
