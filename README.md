@@ -1,8 +1,8 @@
-# 🧘 Shanti Guide
+# 🧘 Shanti HTML Guide
 
->success create **SH**arable, interactive, st**AN**dalone html dashboard from **T**abular proteom**I**cs data
+>success **SH**arable, interactive, st**AN**dalone html dashboard from **T**abular proteom**I**cs data
 
-**Shanti** is a Python library for creating interactive, standalone HTML file from proteomics data. Instructions to create HTML file are described [here](https://pypi.org/project/shanti/). This page explains the basic features of HTML file.
+**Shanti** is a Python library for creating HTML file from proteomics data. Instructions to create HTML file are described [here](https://pypi.org/project/shanti/). This page explains features of HTML file.
 
 1. Filter Bars 
 2. Search Tool
