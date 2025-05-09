@@ -109,7 +109,7 @@ dashboard_path = create_interactive_dashboard(
 )
 ```
 
-## 📊 Final Output
+# 📊 Final Output
 
 The result is a fully interactive HTML dashboard (`dashboard.html`) which you can open in any browser.
 
@@ -118,19 +118,19 @@ The result is a fully interactive HTML dashboard (`dashboard.html`) which you ca
 - Interactive tables of proteins and peptides
 - Ability to click/select proteins and see related peptides instantly
 
-## 🧑‍💻 For Developers
+# 🧑‍💻 For Developers
 To extend or modify this tool:
 
 - Check the shanti source folder
 - Edit the histogram, volcano, or dashboard layout logic
 - Test using Jupyter notebooks or scripts
 
-## 🙋 FAQ
+# 🙋 FAQ
 **Q**: What kind of Excel format is expected?
 **A**: The protein file should contain fold change and p-value columns. The peptide file should contain UniProt IDs and sequence-level info.
 
 **Q**: Does it support .csv files?
 **A**: Not yet, but it's easy to adapt by editing the load_data function.
 
-## 📬 Questions?
+# 📬 Questions?
 Feel free to open an issue or reach out with feedback!
