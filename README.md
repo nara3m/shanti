@@ -2,11 +2,7 @@
 
 >success create **SH**arable, interactive, st**AN**dalone html dashboard from **T**abular proteom**I**cs data
 
-[**Shanti**](https://pypi.org/project/shanti/) is a Python library for creating interactive, standalone HTML dashboards from proteomics data (specifically input data in Tabular format such as Microsoft Excel). 
-
-Instructions to create HTML file are described later in [Section Test](http://link_to_the_section).
-
-Let's begin with the main components of the HTML file.
+**Shanti** is a Python library for creating interactive, standalone HTML file from proteomics data. Instructions to create HTML file are described [here](https://pypi.org/project/shanti/). This page explains the basic features of HTML file.
 
 1. Filter Bars 
 2. Search Tool
@@ -20,17 +16,22 @@ Let's begin with the main components of the HTML file.
 
 ## 1. Filter Bar
 
->warning influences: Volcano Plot
+Ue filter bars to adjust x and y axes of Volcano Plot. For example, a. to display data points that have log2 fold change greater than 2 or b. display data points with -log10 P value greater than 1.3 (equals P value less than 0.05, biomedical scientists use this cutoff frequently).
 
-Filter bars can be adjusted to display a specific range of data points in [Volcano Plot](#3-volcano-plot). For example, biomedical scientists frequently discard all data points with a -log 10 P value less than 1.3 (equals P value less than 0.05). 
+The default range of filter bars come from the original Proteomics data, therefore fixed before HTML file was created.
+
+⚠️ Remember to reset filters if you would like to see all data points again
+
+📝 Adjusting filter bars will automatically change data points in Volcano Plot. But adjusting filter bars will **NOT** automatically re-adjust existing histograms or tables.
 
 ## 2. Search Tool
+
+Search Tool works on all _text_ columns (UniProtID, Description, Gene) of full Protein-level table.  `6. Protein Table`. For example, try search with `kinase` and notice the data points displayed in `3. Volcano Plot`.
 
 >info Depends on: Input files for **Shanti** python library (example, [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) and [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx)).
 
 >warning Influences: `3. Volcano Plot`
 
-Search Tool can be used to search all `text` columns of `6. Protein Table`. For example, try search with `kinase` and notice the data points displayed in `3. Volcano Plot`.
 
 >danger Remember to clear the search bar if you want to return to original display of all data points in `3. Volcano Plot`
 
