@@ -20,11 +20,9 @@ Let's begin with the main components of the HTML file.
 
 ## 1. Filter Bar
 
-$${\color{red}depends on: }$$ nothing
+>warning influences: Volcano Plot
 
->warning influences: #3-volcano-plot
-
-Filter bars can be adjusted to display a specific range of data points in `3. Volcano Plot`. For example, biomedical scientists frequently discard all data points with a -log 10 P value less than 1.3 (equals P value less than 0.05). 
+Filter bars can be adjusted to display a specific range of data points in [Volcano Plot](#3-volcano-plot). For example, biomedical scientists frequently discard all data points with a -log 10 P value less than 1.3 (equals P value less than 0.05). 
 
 ## 2. Search Tool
 
