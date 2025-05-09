@@ -59,9 +59,13 @@ source = load_data(
 )
 ```
 > Normal Blockquote
+
 >info Info Blockquote
+
 >warning Warning Blockquote
+
 >danger Danger Blockquote
+
 >success Success Blockquote
 
 Create histograms for visualization:
