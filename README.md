@@ -20,7 +20,7 @@ Let's begin with the main components of the HTML file.
 
 ## 1. Filter Bar
 
->info depends on: 
+$${\color{red}depends on: }$$ nothing
 
 >warning influences: #3-volcano-plot
 
