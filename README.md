@@ -28,7 +28,7 @@ Filter bars can be adjusted to display a specific range of data points in `3. Vo
 
 >info Depends on: Input files for **Shanti** python library (example, [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) and [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx)).
 
->warning Influences: 3. Volcano Plot
+>warning Influences: `3. Volcano Plot`
 
 Search Tool can be used to search all `text` columns of `6. Protein Table`. For example, try search with `kinase` and notice the data points displayed in `3. Volcano Plot`.
 
@@ -36,6 +36,13 @@ Search Tool can be used to search all `text` columns of `6. Protein Table`. For 
 
 >success Search Tool frequently used in combination with `Box Select` or `Tap` tool (will be explained in next section) of `3. Volcano Plot` to see information of searched Proteins in `6. Protein Table` and `7. Peptide Table`
 
+## 3. Volcano Plot
+
+>info Depends on: Input files for **Shanti** python library (example, [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) and [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx)), `1. Filter Bar` and `2. Search Bar`
+
+>warning Influences: `4. Histogram 1`, `5. Histogram 2`, `6. Protein Table`, `7. Peptide Table`
+
+Search Tool can be used to search all `text` columns of `6. Protein Table`. For example, try search with `kinase` and notice the data points displayed in `3. Volcano Plot`.
 
 **Shanti** package simplifies the process of creating interactive volcano plots, histograms and tables. **Shanti** uses [Bokeh](https://bokeh.org) library in the background to generate a HTML file that contains plots and tables. The HTML file can be opened in any browser (Firefox, Chrome, Safari, Edge etc.). It is very convinient to securely send HTML file to collaborators via email or dropbox. HTML file format is chosen becuase it allows end users can explore proteomics data with without requiring any server or software installation.
 
