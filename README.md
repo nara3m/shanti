@@ -2,7 +2,7 @@
 
 >success **SH**arable, interactive, st**AN**dalone html dashboard from **T**abular proteom**I**cs data
 
-**Shanti** is a Python library for creating HTML file from proteomics data. Instructions to create HTML file are described [here](https://pypi.org/project/shanti/). This page explains features of HTML file.
+**Shanti** is a Python library for creating HTML file from proteomics data. Instructions to create HTML file are described [here](https://pypi.org/project/shanti/). A demo HTML file is available [here](https://shanti-v010.netlify.app/). This page explains features of HTML file using the demo file as example.
 
 1. Filter Bars 
 2. Search Tool
@@ -12,38 +12,82 @@
 6. Protein Table
 7. Peptide Table
 
-![Screenshot of HTML file with highlighted components](https://github.com/nara3m/shanti/raw/refs/heads/main/img/components.png)
+![Image of HTML file with highlighted components](https://github.com/nara3m/shanti/raw/refs/heads/main/img/components.png)
 
 ## 1. Filter Bar
 
-Ue filter bars to adjust x and y axes of Volcano Plot. For example, a. to display data points that have log2 fold change greater than 2 or b. display data points with -log10 P value greater than 1.3 (equals P value less than 0.05, biomedical scientists use this cutoff frequently).
+Ue filter bars to adjust x and y axes of Volcano Plot. For example, 
+
+a. display data points with adjusted P value less than 0.05 (biomedical scientists use this cutoff frequently)
+
+![Image of HTML file with p value filter](https://github.com/nara3m/shanti/raw/refs/heads/main/img/filter1.png)
+
+b. to display data points that have log2 fold change greater than 0.4 (not frequently used cutoff, only used for the demo dataset)
+
+![Image of HTML file with log2 fold change filter](https://github.com/nara3m/shanti/raw/refs/heads/main/img/filter2.png)
 
 The default range of filter bars come from the original Proteomics data, therefore fixed before HTML file was created.
 
-⚠️ Remember to reset filters if you would like to see all data points again
+⚠️ Only one filter can be adjusted at a time. To adjust both x and y axis at the same time, use Volcano Plot buttons (Buttons will be described in detail in Volcano Plot section)
 
-📝 Adjusting filter bars will automatically change data points in Volcano Plot. But adjusting filter bars will **NOT** automatically re-adjust existing histograms or tables.
+📝 Adjusting filter bars will automatically change data points in Volcano Plot. But adjusting filter bars will **NOT** automatically re-adjust existing histograms or tables. Remember to reset filters if you would like to see all data points!
 
 ## 2. Search Tool
 
-Search Tool works on all _text_ columns (UniProtID, Description, Gene) of full Protein-level table.  `6. Protein Table`. For example, try search with `kinase` and notice the data points displayed in `3. Volcano Plot`.
+Search Tool works on all _text_ columns (UniProtID, Description, Gene) of full Protein-level table (**6**). For example, try search with `kinase` and notice the data points in Volcano Plot.
 
->info Depends on: Input files for **Shanti** python library (example, [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) and [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx)).
+![Image of HTML file with **Kinase** in Search bar](https://github.com/nara3m/shanti/raw/refs/heads/main/img/kinase1.png)
 
->warning Influences: `3. Volcano Plot`
+📝 To see Protein and Peptide tables of all Kinases, data points must be selected with the __Box Select__ tool of Volcano Plot (described more in Volcano Plot section)
 
+![Image of HTML file with all **Kinase** data points selected](https://github.com/nara3m/shanti/raw/refs/heads/main/img/kinase2.png)
 
->danger Remember to clear the search bar if you want to return to original display of all data points in `3. Volcano Plot`
-
->success Search Tool frequently used in combination with `Box Select` or `Tap` tool (will be explained in next section) of `3. Volcano Plot` to see information of searched Proteins in `6. Protein Table` and `7. Peptide Table`
+⚠️ Remember to clear the search bar if you want to return to original display of all data points
 
 ## 3. Volcano Plot
 
->info Depends on: Input files for **Shanti** python library (example, [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx) and [Test_Shanti_Proteins.xlsx](https://github.com/nara3m/shanti/dklfgjasg.xlsx)), `1. Filter Bar` and `2. Search Bar`
+This is the main component of HTML page. Components **4** to **7** depend on the selected data points in Volcano Plot. There are two ways to select data points: Single data point selection with __Tap__ tool and multiple selection with __Box Select__ tool (located below Volcano Plot). Other tools, [Pan, Box Zoom, Wheel Zoom](https://www.tutorialspoint.com/bokeh/bokeh_plot_tools.htm) allow futher interactions in Volcano Plot.
 
->warning Influences: `4. Histogram 1`, `5. Histogram 2`, `6. Protein Table`, `7. Peptide Table`
+## 4. Histogram 1 
 
-Search Tool can be used to search all `text` columns of `6. Protein Table`. For example, try search with `kinase` and notice the data points displayed in `3. Volcano Plot`.
+This is typically the histogram of Protein abundance values (or normalized abundance values) of the Treatment group. In demo example, it is labelled **KO dTAG**. The person creating the HTML file decides which data column from the input Protein table (example, [Test_Shanti_Proteins.xlsx](https://github.com/n3m4u/shanti/raw/refs/heads/main/tests/Shanti_Test_Proteins.xlsx) is used for creating Histogram. The Plot label **KO dTAG** is also defined by the person creating HTML file. 
+
+Number of bins are fixed (20) and the bin sizes are automatically assigned based on the data distribution. 
+
+Data points selected in Volcano Plot are displayed as horizontal lines on top of Histogram. y axis intersection of lines always correspond to the respective bin. For example, if Protein `P09382` is selected in demo example, then the average abundance value of that Protein in **KO dTAG** 107.4 is log2 transformed to 6.75 and displayed in Histogram 1.
+
+⚠️ Note: although frequency bins are correctly assigned, the exact positon (y intersect) of horizontal line within the assigned bin is generated using a random seed to automatically adjust for overlapping lines. The horizontal lines should therefore be interpreted with care.
+
+## 5. Histogram 2
+
+Similar to previous histogram but for the Control group. In demo example, it is labelled **DMSO**
+
+Taken both histograms together, selected proteins overlaid as horizontal lines allow basic interpretations. For example, if protein P09382 is seleced in demo example, then:
+
+![Image of HTML file with selected Proteins overlaied on Histograms](https://github.com/nara3m/shanti/raw/refs/heads/main/img/histogram.png)
+
+a. The selected protein has relatively a low abundance (becuase the y intersects at the lower end)
+b. The selected protein has relatively higher abundance in **KO dTAG** group compared to **DMSO** group
+
+## 6. Protein Table
+
+Protein level information of the data points selected in Volcano Plot are displayed as a table. The exact columns to display can be adjusted when creating HTML file. In demo example, columns, UniProtID, Gene, Description, Peptides, PeptidesU (Unique Peptides), PSMs columns from [Test_Shanti_Proteins.xlsx](https://github.com/n3m4u/shanti/raw/refs/heads/main/tests/Shanti_Test_Proteins.xlsx) were displayed.
+
+If multiple data points were selected (with __Box Select__ tool), then it is useful to sort the table.
+
+![Image of HTML file with Peptide Table sorted with Gene column](https://github.com/nara3m/shanti/raw/refs/heads/main/img/table_sort.png)
+
+## 7. Peptide Table
+
+Peptide level information of data points selected in Volcano Plot are displayed as a table. The exact columns to display can be adjusted when creating HTML file. In demo example, columns, UniProtID, Sequence, ProteinGroups, Proteins, PSMs, Position, MissedCleavages, QuanInfo columns from [Test_Shanti_PeptideGroups.xlsx](https://github.com/n3m4u/shanti/raw/refs/heads/main/tests/Shanti_Test_PeptideGroups.xlsx) were displayed.
+
+If multiple data points were selected in Volcano Plot (with __Box Select__ tool), then it is useful to sort the table
+
+# Cite
+
+Marella, N. (2025). Shanti: create SHarable, interactive, stANdalone html dashboard from Tabular proteomIcs data (v0.1.0). Zenodo. https://doi.org/10.5281/zenodo.15307776
+
+########################
 
 **Shanti** package simplifies the process of creating interactive volcano plots, histograms and tables. **Shanti** uses [Bokeh](https://bokeh.org) library in the background to generate a HTML file that contains plots and tables. The HTML file can be opened in any browser (Firefox, Chrome, Safari, Edge etc.). It is very convinient to securely send HTML file to collaborators via email or dropbox. HTML file format is chosen becuase it allows end users can explore proteomics data with without requiring any server or software installation.
 
