@@ -101,4 +101,4 @@ Marella, N. (2025). Shanti: create SHarable, interactive, stANdalone html dashbo
 
 
 ## 📬 Questions?
-Feel free to contact [Nara Marella](https://contact.n3m.in)
+Feel free to contact [Nara Marella](https://linkedin.com/in/nara3m)
