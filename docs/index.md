@@ -31,8 +31,7 @@ b. to display data points that have log2 fold change greater than 0.4 (not frequ
 
 The default range of filter bars come from the original Proteomics data, therefore fixed before HTML file was created.
 
-[!WARNING] 
-Only one filter can be adjusted at a time. To adjust both x and y axis at the same time, use Volcano Plot [buttons](https://www.tutorialspoint.com/bokeh/bokeh_plot_tools.htm)
+⚠️ Only one filter can be adjusted at a time. To adjust both x and y axis at the same time, use Volcano Plot [buttons](https://www.tutorialspoint.com/bokeh/bokeh_plot_tools.htm)
 
 Adjusting filter bars will automatically change data points in Volcano Plot but will **NOT** automatically re-adjust existing histograms or tables. 
 
@@ -48,8 +47,7 @@ Search Tool works on all _text_ columns (in demo HTML file, columns UniProtID, D
 
 ![Image of HTML file with all **Kinase** data points selected](https://github.com/nara3m/shanti/raw/refs/heads/main/img/kinase2.png)
 
-[!WARNING] 
-Remember to clear the search bar if you want to return to original display of all data points
+⚠️ Remember to clear the search bar if you want to return to original display of all data points
 
 ## 3. Volcano Plot
 
@@ -69,8 +67,7 @@ Number of bins are fixed (20) and the bin sizes are automatically assigned based
 
 Data points selected in Volcano Plot are displayed as horizontal lines on top of Histogram. y axis intersection of lines always correspond to the respective bin. For example, if Protein `P09382` is selected in demo example, then the average abundance value of that Protein in **KO dTAG** 107.4 is log2 transformed to 6.75 and displayed in Histogram 1.
 
-[!WARNING] 
-Note: although frequency bins are correctly assigned to the selected protein, the exact positon (y intersect) of horizontal line within the assigned bin is generated using a random seed to automatically adjust for overlapping lines. Therefore, if the same data point is selected multiple times, then the horizontal line is drawn at slightly different y intersect (but always within correct bin). The horizontal lines should therefore be interpreted with care.
+⚠️ Note: although frequency bins are correctly assigned to the selected protein, the exact positon (y intersect) of horizontal line within the assigned bin is generated using a random seed to automatically adjust for overlapping lines. Therefore, if the same data point is selected multiple times, then the horizontal line is drawn at slightly different y intersect (but always within correct bin). The horizontal lines should therefore be interpreted with care.
 
 ## 5. Histogram 2
 
